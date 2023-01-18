@@ -1,0 +1,64 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "af0e6f2bd72effd258ffdd89164e4b53",
+    "packages": [
+        {
+            "name": "chahal26/php-simple-router",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chahal26/php-simple-router.git",
+                "reference": "f2c69f179738ee879c129a0aabf6a4adbf383459"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chahal26/php-simple-router/zipball/f2c69f179738ee879c129a0aabf6a4adbf383459",
+                "reference": "f2c69f179738ee879c129a0aabf6a4adbf383459",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chahal26\\PhpSimpleRouter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sahil Chahal",
+                    "email": "dev.sahilchahal@gmail.com"
+                }
+            ],
+            "description": "Simple Routing made with OOPS in PHP",
+            "keywords": [
+                "php-router",
+                "router",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/chahal26/php-simple-router/issues",
+                "source": "https://github.com/chahal26/php-simple-router/tree/2.0"
+            },
+            "time": "2023-01-15T07:07:20+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

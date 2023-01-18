@@ -1,0 +1,5 @@
+{
+    "require": {
+        "chahal26/php-simple-router": "^2.0"
+    }
+}
