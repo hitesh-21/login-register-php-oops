@@ -13,4 +13,6 @@ $router->get('/about', 'PagesController@about');
 $router->get('/privacy', 'PagesController@privacy');
 
 /* Execute Routes */
+require_once "resources/views/layouts/header.php";
 $router->run();
+require_once "resources/views/layouts/footer.php";
