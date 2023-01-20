@@ -29,6 +29,6 @@ Class AuthController{
 
         $_SESSION['login_user'] = $loginUser;
         
-        header("Location: login");
+        header("Location: profile");
     }
 }

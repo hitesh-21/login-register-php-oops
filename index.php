@@ -19,6 +19,9 @@ $router->post('/register', 'AuthController@registerPost');
 $router->get('/login', 'AuthController@login');
 $router->post('/login', 'AuthController@loginPost');
 
+//Profile Routes
+$router->get('/profile', 'ProfileController@profile');
+
 /* Execute Routes */
 require_once "resources/views/layouts/header.php";
 $router->run();
