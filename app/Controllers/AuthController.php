@@ -16,6 +16,19 @@ Class AuthController{
     }
 
     public function login(){
-        echo "Login PAge";
+        require_once "resources/views/auth/login.php";
+    }
+
+    public function loginPost(){
+        $user = new User();
+        $loginUser = $user->checkIfUserExists($_POST['email'], md5($_POST['password']));
+
+        if($loginUser === false){
+            return 'Invalid Credentials';
+        }
+
+        $_SESSION['login_user'] = $loginUser;
+        
+        header("Location: login");
     }
 }

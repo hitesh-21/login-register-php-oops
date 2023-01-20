@@ -28,4 +28,16 @@ class User extends Database
 
         return false;
     }
+
+    public function checkIfUserExists($email, $password)
+    {
+        $sql = "SELECT id FROM $this->table WHERE email='$email' AND password='$password'";
+        $result = $this->connection->query($sql);
+
+        if($result->num_rows == 0){
+            return false;
+        }
+
+        return $result->fetch_assoc()['id'];
+    }
 }

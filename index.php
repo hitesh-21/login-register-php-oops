@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'vendor/autoload.php';
 use Chahal26\PhpSimpleRouter\Router;
 
@@ -16,6 +17,7 @@ $router->get('/privacy', 'PagesController@privacy');
 $router->get('/register', 'AuthController@register');
 $router->post('/register', 'AuthController@registerPost');
 $router->get('/login', 'AuthController@login');
+$router->post('/login', 'AuthController@loginPost');
 
 /* Execute Routes */
 require_once "resources/views/layouts/header.php";
