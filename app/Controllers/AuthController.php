@@ -12,13 +12,13 @@ Class AuthController{
     public function registerPost(){
         $validation=new validate();
         if(empty($validation->validate_details($_POST))){
-           $user = new User();
-           $user->insert($_POST);
-           echo'Registered Succesful';
-           header("Location: register");
+            $user = new User();
+            $user->insert($_POST);
+            echo'Registered Succesful';
+            header("Location: register");
         }
-        else{
-            $validation->show_error();
+         else{
+             $validation->show_error();
       }
     }
 
