@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-class Validate extends User
+ class Validate extends User
 {
   private $errors=[];
   public function validate_details($data){
