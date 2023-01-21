@@ -3,11 +3,7 @@ namespace App\Models;
 
 class Validate extends User
 {
-  public $errors=[];
-  public $name,$email,$password;
-  public function __construct(){
-    
-  }
+  private $errors=[];
   public function validate_details($data){
         if(empty($data['name']))
             {
