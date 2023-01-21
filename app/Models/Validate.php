@@ -36,7 +36,7 @@ namespace App\Models;
 //    }
         class Validate extends User
         {
-        private $errors=[],$name,$email,$password;
+        public $errors=[],$name,$email,$password;
         public function __construct($data){
             parent::__construct();
             $this->name=$this->getName($data['name']);

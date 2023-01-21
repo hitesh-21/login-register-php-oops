@@ -10,16 +10,17 @@ Class AuthController{
     }
 
     public function registerPost(){
-          if(empty($validation=new validate($_POST))){
+         $validation=new validate($_POST);
+         if(empty($validation->errors)){
               $user = new User();
               $user->insert($_POST);
+                  header("Location: register");
               echo'Registered Succesful';
           }else{
             $validation->show_error();
           }
         // print_r($validation->validate_details($_POST));
         // if(empty($validation->validate_details($_POST))){
-        //     header("Location: register");
         // }
     //      else{
     //          $validation->show_error();
