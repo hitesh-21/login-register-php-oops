@@ -18,6 +18,7 @@ class User extends Database
         $email = $data['email'];
         $phone = $data['phone'];
         $password = md5($data['password']);
+        die;
 
         $sql = "INSERT INTO $this->table (name, email, phone, password)
                 VALUES ('$name', '$email', '$phone', '$password')";
