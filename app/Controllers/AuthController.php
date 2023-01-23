@@ -19,19 +19,17 @@ Class AuthController{
           }else{
             $validation->show_error();
           }
-        // print_r($validation->validate_details($_POST));
-        // if(empty($validation->validate_details($_POST))){
-        // }
-    //      else{
-    //          $validation->show_error();
-    //   }
-    }
-
+        } 
     public function login(){
         require_once "resources/views/auth/login.php";
     }
 
     public function loginPost(){
+        echo'hello';
+        $login_valid=new Validate();
+        echo'<pre>';
+        print_r($login_valid());
+        die;
         $user = new User();
         $loginUser = $user->checkIfUserExists($_POST['email'], md5($_POST['password']));
 
