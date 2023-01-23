@@ -12,8 +12,8 @@ Class ProfileController{
     }
 
     public function profile(){
-        echo "<pre>";
-        print_r($_SESSION);
+        $userdata = auth();
+        require_once "resources/views/profile/index.php";
     }
 
     public function logout(){
