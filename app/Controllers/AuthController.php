@@ -6,7 +6,7 @@ use App\Models\User;
 Class AuthController{
 
     public function __construct(){
-        if(isset($_SESSION['login_user'])){
+        if(auth() != null){
             header("Location: profile");
         }
     }

@@ -16,7 +16,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="">Login Register</a>
                     </li>
-                    <?php if(isset($_SESSION['login_user'])){ ?> 
+                    <?php if(auth() != null){ ?> 
                         <li class="nav-item">
                             <a class="nav-link" href="profile">Profile</a>
                         </li>
