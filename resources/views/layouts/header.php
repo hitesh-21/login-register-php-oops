@@ -16,12 +16,21 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="">Login Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
-                    </li>
+                    <?php if(isset($_SESSION['login_user'])){ ?> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout">Logout</a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </nav>

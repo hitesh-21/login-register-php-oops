@@ -21,6 +21,7 @@ $router->post('/login', 'AuthController@loginPost');
 
 //Profile Routes
 $router->get('/profile', 'ProfileController@profile');
+$router->get('/logout', 'ProfileController@logout');
 
 /* Execute Routes */
 require_once "resources/views/layouts/header.php";
