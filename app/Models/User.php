@@ -40,4 +40,11 @@ class User extends Database
 
         return $result->fetch_assoc()['id'];
     }
+
+    public function getUserData($userid)
+    {
+        $sql = "SELECT * FROM $this->table WHERE id=$userid";
+        $result = $this->connection->query($sql);
+        return $result->fetch_assoc();
+    }
 }
