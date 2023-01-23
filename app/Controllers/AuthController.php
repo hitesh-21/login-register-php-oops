@@ -4,7 +4,14 @@ namespace App\Controllers;
 use App\Models\User;
 
 Class AuthController{
-    public function register(){
+
+    public function __construct(){
+        if(isset($_SESSION['login_user'])){
+            header("Location: profile");
+        }
+    }
+
+    public function register(){  
         require_once "resources/views/auth/register.php";
     }
 
