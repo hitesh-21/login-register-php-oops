@@ -10,14 +10,15 @@ Class AuthController{
     }
 
     public function registerPost(){
-         $validation=new validate($_POST);
+         $validation=new Validate($_POST);
+         $validation->exist();
          if(empty($validation->errors)){
               $user = new User();
               $user->insert($_POST);
-                  header("Location: register");
+        //   header("Location: register");
               echo'Registered Succesful';
           }else{
-            $validation->show_error();
+            $validation->showError();
           }
         } 
     public function login(){
@@ -25,20 +26,18 @@ Class AuthController{
     }
 
     public function loginPost(){
-        echo'hello';
-        $login_valid=new Validate();
-        echo'<pre>';
-        print_r($login_valid());
-        die;
+        $validation=new Validate($_POST);
+        if(empty($validation->errors)){
         $user = new User();
         $loginUser = $user->checkIfUserExists($_POST['email'], md5($_POST['password']));
-
         if($loginUser === false){
             return 'Invalid Credentials';
         }
-
         $_SESSION['login_user'] = $loginUser;
         
         header("Location: profile");
+    }else{
+        $validation->showError();
     }
+  }
 }

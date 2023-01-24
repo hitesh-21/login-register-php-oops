@@ -21,7 +21,6 @@ class User extends Database
         $sql = "INSERT INTO $this->table (name, email, phone, password)
                 VALUES ('$name', '$email', '$phone', '$password')";
         if ($this->connection->query($sql) === TRUE) {
-            echo'insert ho gya';
             return true;
         }
 

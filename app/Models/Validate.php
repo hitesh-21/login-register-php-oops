@@ -1,47 +1,38 @@
 <?php
-namespace App\Models;
-        class Validate extends User
-        {
-        public $errors=[],$name,$email,$password;
-        public function __construct($data){
-            parent::__construct();
-            $this->name=$this->getName($data['name']);
-            $this->email=$this->getEmail($data['email']);
-            $this->password=$this->getPassword($data['password']);
-        }
-            public function getName($Name){
-                if(empty($Name))
-                    {
-                      $this->errors[]='Name is required';
-                    }
-                }
-                public function getPassword($Password){
-                    if(empty($Password))
-                    {
-                        $this->errors[]='password is required';
+    namespace App\Models;
+    class Validate extends User {
+        public $errors=[];
+        public $data;
 
-                    }
-                }
-                public function getEmail($Email){
-                    if(empty($Email))
-                    {
-                        $this->errors[]='Email is required';
-                       
-                    }else{
-                        $email_sql ="SELECT *from `$this->table`  WHERE email='$Email'";
-                        $result = $this->connection->query($email_sql);
-                        if($result->num_rows == 0)
-                        {
-                            return;
-                        }else{
-                            $this->errors[]='Email already exist';
-                             }
-                    }  
-            }    
-            public function show_error(){
-                foreach ( $this->errors as $errors) {
-                echo $errors;
+        public function __construct($data) {
+            parent::__construct();
+            $this->data=$data;
+            foreach ($this->data as $key => $value) {
+               $this->required($key,$value);
+           }
+        }
+        public function required($key,$val) {
+            if(empty($val)) {
+                $this->errors[]= "$key is required";
+            }
+        }
+        public function exist(){
+            $email=$this->data['email'];
+            // $this->required('email',$email);
+            $sql="SELECT * FROM $this->table WHERE email='$email'";
+            $res=$this->connection->query($sql);
+            if($res->num_rows == 0) {
+                return  true;
+            }else{
+                $this->errors[]="Email already exist";
+            }
+        }
+        public function showError() {
+            foreach ($this ->errors as $error) {
+                # code...
+                echo $error;
                 echo'<br>';
-                }
-            } 
-        }   
+              }
+        }
+    }
+
